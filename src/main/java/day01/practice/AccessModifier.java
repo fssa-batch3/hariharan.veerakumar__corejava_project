@@ -1,15 +1,15 @@
 package day01.practice;
 
 public class AccessModifier {
-//	private static String a = "a";
-//	private static String b = "b";
-//	private static String c = "c";
-//	private static String d = "d";
+	private static String a = "a";
+	private static String b = "b";
+	private static String c = "c";
+	private static String d = "d";
 	
-	public static String a = "a";
-	public static String b = "b";
-	public static String c = "c";
-	public static String d = "d";
+//	public static String a = "a";
+//	public static String b = "b";
+//	public static String c = "c";
+//	public static String d = "d";
 	
 	
 	public static void main(String[] args) {
