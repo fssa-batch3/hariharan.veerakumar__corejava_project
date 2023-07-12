@@ -38,7 +38,7 @@ public class User {
       
       public class TestUser{
     	  /**
-    	 * @param hariharanveerakumar
+    	 * @author HariharanVeerakumar
     	 */
     	public static void main(String[] args) {
     		  Scanner sc = new Scanner(System.in);
