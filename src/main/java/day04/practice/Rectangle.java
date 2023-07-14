@@ -1,64 +1,45 @@
 package day04.practice;
 
-class RectanglePractice {
-	protected int length;
-	protected int breadth;
+class Rectangle {
+	protected double length;
+    protected double breadth;
 
-	public RectanglePractice() {
+    public Rectangle(double length, double breadth) {
+        this.length = length;
+        this.breadth = breadth;
+    }
 
-	}
+    public double getLength() {
+        return length;
+    }
 
-	public RectanglePractice(int length, int breadth) {
-		this.length = length;
-		this.breadth = breadth;
+    public void setLength(double length) {
+        this.length = length;
+    }
 
-	}
+    public double getBreadth() {
+        return breadth;
+    }
 
-	public int getLength() {
-		return length;
-	}
+    public void setBreadth(double breadth) {
+        this.breadth = breadth;
+    }
 
-	public int setLength(int length) {
-		 this.length = length;
-		 return length;
-	}
-
-	public int getBreadth() {
-		return breadth;
-	}
-
-	public void setBreadth(int breadth) {
-		this.breadth = breadth;
-	}
-
-	public int calculateArea(int length, int breadth) {
-		return length * breadth;
-	}
-
+    public double calculateArea() {
+        return length * breadth;
+    }
 }
 
-class Square extends RectanglePractice {
-	public Square() {
-		
-	}
+ class Square extends Rectangle {
+    public Square(double side) {
+        super(side, side);
+    }
 
-	public Square(int l,int b) {
-		super(l, b);
-	}
-	
-	public Square(int length) {
-		this.length = length;
-	}
-	
-}
-
-public class Rectangle {
-	public static void main(String[] args) {
-		Square square = new Square();
-		int length = square.setLength(10);
-		int area = square.calculateArea(length,3);
-		System.out.println("Length : " + length);
-		System.out.println("Area : " + area);
-
-	}
+    public static void main(String[] args) {
+        Square square = new Square(5.0);
+        double length = square.getLength();
+        double area = square.calculateArea();
+        System.out.println("Length: " + length);
+        System.out.println("Area: " + area);
+    }
 }

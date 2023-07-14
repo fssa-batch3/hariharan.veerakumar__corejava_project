@@ -6,22 +6,20 @@ import org.junit.jupiter.api.Test;
 public class TestRectangle {
 	
 	public static void main(String[] args) {
-		Square square = new Square();
-		int length = square.setLength(10);
-		int area = square.calculateArea(length,3);
-		System.out.println("Length : " + length);
-		System.out.println("Area : " + area);
+		  Square square = new Square(5.0);
+	        double length = square.getLength();
+	        double area = square.calculateArea();
 		
 	}
 	
 	@Test
 	public void testGettersSetters() {
-		Square square = new Square();
-		int length = square.setLength(10);
-		int area = square.calculateArea(length,3);
+		  Square square = new Square(5.0);
+	        double length = square.getLength();
+	        double area = square.calculateArea();
 		
-		assertEquals(10,square.setLength(10));
-		assertEquals(30,square.calculateArea(length, 3));
+		assertEquals(5.0,square.getLength());
+		assertEquals(25.0,square.calculateArea());
 	}
 
 }
