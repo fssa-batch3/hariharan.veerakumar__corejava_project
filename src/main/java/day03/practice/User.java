@@ -1,4 +1,5 @@
 package day03.practice;
+
 import java.util.Scanner;
 
 public class User {

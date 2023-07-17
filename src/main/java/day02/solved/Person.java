@@ -1,6 +1,7 @@
 package day02.solved;
 
 public class Person {
+	
 	 private String name;  // Private data member
 
 	    public String getName() {  // Public getter method

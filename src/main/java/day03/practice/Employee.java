@@ -7,6 +7,7 @@ public class Employee {
 	    public Employee(int id, String name) {
 	        this.id = id;
 	        this.name = name;
+//	        System.out.println("id = " + id+ ", "+"name = " + name);
 	    }
 	    public int getId() {
 	    	return id;

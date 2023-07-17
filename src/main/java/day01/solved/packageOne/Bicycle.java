@@ -123,7 +123,7 @@ public class Bicycle {
 
 		bicycle1.printStates();
 
-//                  bicycle1.changeGearOnSpeed();
+//      bicycle1.changeGearOnSpeed();
 
 		bicycle1.printStates();
 

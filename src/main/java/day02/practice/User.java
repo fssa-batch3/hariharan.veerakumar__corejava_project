@@ -40,6 +40,7 @@ public class User {
 
 	public static void main(String[] args) {
 		User user = new User();
+		
 		// for Id
         user.setId(10);
         int userId = user.getId();
