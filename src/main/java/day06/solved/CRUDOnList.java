@@ -1,4 +1,5 @@
 package day06.solved;
+
 import java.util.*;
 
 public class CRUDOnList {

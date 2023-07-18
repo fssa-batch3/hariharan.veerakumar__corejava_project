@@ -22,7 +22,7 @@ public class FindTask {
       	taskList.add(task2);
       	taskList.add(task3);
       	
-      	boolean found = findTaskByName("run", taskList);
+      	boolean found = findTaskByName("Workout", taskList); 
       	System.out.println(found);
 
 	}
