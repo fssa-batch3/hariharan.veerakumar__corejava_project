@@ -82,16 +82,13 @@ class Task {
 public class RemoveTasks {
     public static void main(String[] args) {
     	
-    	ArrayList a = new ArrayList();
-		a.hashCode();
+//    	ArrayList a = new ArrayList();
+//		a.hashCode();
     	
         ArrayList<Task> tasks = new ArrayList<>();
         tasks.add(new Task(1, "Task 1", LocalDate.of(2023, 10, 1)));
         tasks.add(new Task(2, "Task 2", LocalDate.of(2023, 10, 1)));
         tasks.add(new Task(3, "Task 1", LocalDate.of(2023, 10, 1)));
-        
-        
-
         
         HashSet<Task> uniqueTasks = new HashSet<>(tasks);
 
