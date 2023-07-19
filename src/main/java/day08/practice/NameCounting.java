@@ -4,7 +4,7 @@ import java.util.*;
 public class NameCounting {
 
 	public static void main(String[] args) {
-	String str = "Ram, Ram, Superman, spider, hey, hello, hey, Spider";
+	String str = "Ram, Ram, Superman, Spider, hey, hello, hey, Spider";
 	
 	String[] names = str.split(",");
 	
