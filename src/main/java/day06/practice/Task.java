@@ -13,16 +13,16 @@ public class Task {
 
 	public static void main(String[] args) {
 		
-		List<Task> TaskList = new ArrayList<Task>();
-		Task task1 = new Task("Eating" , 4);
-		Task task2 = new Task("Workout" , 5);
-		Task task3 = new Task("Sleeping" , 2);
+		List<Task1> TaskList = new ArrayList<Task1>();
+		Task1 task1 = new Task1("Eating" , 4);
+		Task1 task2 = new Task1("Workout" , 5);
+		Task1 task3 = new Task1("Sleeping" , 2);
 		
 		TaskList.add(task1);
 		TaskList.add(task2);
 		TaskList.add(task3);
 		
-		for (Task task : TaskList) {
+		for (Task1 task : TaskList) {
 			System.out.println("Task name : " + task.taskName + " => Priority : "+ task.priority);
 		
 		}
