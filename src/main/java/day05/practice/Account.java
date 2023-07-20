@@ -21,30 +21,32 @@ public double getBalance() {
 public void setBalance(double balance) {
 	this.balance = balance;
 }
+public static void main(String[] args) {
+	Account axisAccount = new Account("AXIS123", 6000.0);
+	Account iciciAccount = new Account("ICICI456", 12000.0);
 
-Account axisAccount = new Account("AXIS123", 6000.0);
-Account iciciAccount = new Account("ICICI456", 12000.0);
+	ATM axisATM = new AxisATM();
+	ATM iciciATM = new IciciATM();
 
-ATM axisATM = new AxisATM();
-ATM iciciATM = new IciciATM();
+	// Deposit
+	axisATM.deposit(axisAccount, 2000.0);
+	iciciATM.deposit(iciciAccount, 3000.0);
+	
+	System.out.println("Axis Account Balance: " + axisAccount.getBalance());
+	System.out.println("ICICI Account Balance: " + iciciAccount.getBalance());
+	
+	// Withdraw
+	try {
+	    axisATM.withdraw(axisAccount, 500.0);
+	    iciciATM.withdraw(iciciAccount, 1000.0);
+	} catch (Exception e) {
+	    System.out.println("Exception occurred: " + e.getMessage());
+	}
+	
+	System.out.println("Axis Account Balance: " + axisAccount.getBalance());
+	System.out.println("ICICI Account Balance: " + iciciAccount.getBalance());
 
-//// Deposit
-//axisATM.deposit("axisAccount", 2000.0);
-//iciciATM.deposit(iciciAccount, 3000.0);
-//
-//System.out.println("Axis Account Balance: " + axisAccount.getBalance());
-//System.out.println("ICICI Account Balance: " + iciciAccount.getBalance());
-//
-//// Withdraw
-//try {
-//    axisATM.withdraw(axisAccount, 500.0);
-//    iciciATM.withdraw(iciciAccount, 1000.0);
-//} catch (Exception e) {
-//    System.out.println("Exception occurred: " + e.getMessage());
-//}
-//
-//System.out.println("Axis Account Balance: " + axisAccount.getBalance());
-//System.out.println("ICICI Account Balance: " + iciciAccount.getBalance());
+}
 
 }
 
