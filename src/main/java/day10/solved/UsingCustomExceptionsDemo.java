@@ -21,7 +21,6 @@ class Task {
 	}
 
 }
-
 class TaskValidator {
 	public static boolean validate(Task task) throws ValidationException {
 		if (task == null)
@@ -37,7 +36,7 @@ public class UsingCustomExceptionsDemo {
 		Task task = new Task();
 //		task.setName("Creating test case"); Commenting this so that exception is thrown
 		
-		try {
+		try {	
 			TaskValidator.validate(task);
 		} catch (ValidationException e) {
 			e.printStackTrace();
