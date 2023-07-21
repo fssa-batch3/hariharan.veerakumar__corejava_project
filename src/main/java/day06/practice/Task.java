@@ -10,19 +10,45 @@ public class Task {
 	    	this.taskName = taskName;
 	    	this.priority = priority;
 	    }
+	    
+	    
+
+	public String getTaskName() {
+			return taskName;
+		}
+
+
+
+		public void setTaskName(String taskName) {
+			this.taskName = taskName;
+		}
+
+
+
+		public int getPriority() {
+			return priority;
+		}
+
+
+
+		public void setPriority(int priority) {
+			this.priority = priority;
+		}
+
+
 
 	public static void main(String[] args) {
 		
-		List<Task1> TaskList = new ArrayList<Task1>();
-		Task1 task1 = new Task1("Eating" , 4);
-		Task1 task2 = new Task1("Workout" , 5);
-		Task1 task3 = new Task1("Sleeping" , 2);
+		List<day06.practice.Task> TaskList = new ArrayList<>();
+		Task task1 = new Task("Eating" , 4);
+		Task task2 = new Task("Workout" , 5);
+		Task task3 = new Task("Sleeping" , 2);
 		
 		TaskList.add(task1);
 		TaskList.add(task2);
 		TaskList.add(task3);
 		
-		for (Task1 task : TaskList) {
+		for (Task task : TaskList) {
 			System.out.println("Task name : " + task.taskName + " => Priority : "+ task.priority);
 		
 		}
