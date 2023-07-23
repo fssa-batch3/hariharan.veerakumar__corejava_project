@@ -15,9 +15,9 @@ class User {
 }
 
 
-class UserManagement{
+ class UserManagement{
 	
-private ArrayList<User> userList = new ArrayList<>();
+ public ArrayList<User> userList = new ArrayList<>();
 
 public void register(User user) throws UserExistsException{
 	for (User ExistingUser : userList) {
@@ -28,6 +28,7 @@ public void register(User user) throws UserExistsException{
 	}
 	userList.add(user);
 }
+
 
 
 }
@@ -43,6 +44,7 @@ public class RemoveDuplicates {
 			userManage.register(user1);
 			userManage.register(user2);
 			userManage.register(user3);
+			System.out.println("All users registered successfully.");
 			
 		} catch (UserExistsException e) {
 			System.out.println("Error : " + e.getMessage());

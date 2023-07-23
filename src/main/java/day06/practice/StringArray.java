@@ -16,10 +16,11 @@ public static void main(String[] args) {
 	for (String city : cityList) {
 		if (!uniqueCity.contains(city)) {
 			uniqueCity.add(city);
-			System.out.println(city);
+//			System.out.println(city);
 		}
 	}
 	
+	System.out.println(uniqueCity);
 //    int n = cityList.size();
 //
 //    for (int i = 0; i < n; i++) {

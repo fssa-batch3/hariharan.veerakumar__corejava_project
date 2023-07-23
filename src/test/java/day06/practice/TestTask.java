@@ -29,19 +29,19 @@ public class TestTask {
 		        taskList.add(task2);
 		        taskList.add(task3);
 
-		        assertEquals(3, taskList.size(), "Size of taskList should be 3");
+		        assertEquals(3, taskList.size());
 
 		        Task1 firstTask = taskList.get(0);
-		        assertEquals("Eating", firstTask.taskName, "Task name should be 'Eating'");
-		        assertEquals(4, firstTask.priority, "Priority should be 4");
+		        assertEquals("Eating", firstTask.taskName);
+		        assertEquals(4, firstTask.priority);
 
 		        Task1 secondTask = taskList.get(1);
-		        assertEquals("Workout", secondTask.taskName, "Task name should be 'Workout'");
-		        assertEquals(5, secondTask.priority, "Priority should be 5");
+		        assertEquals("Workout", secondTask.taskName);
+		        assertEquals(5, secondTask.priority);
 
 		        Task1 thirdTask = taskList.get(2);
-		        assertEquals("Sleeping", thirdTask.taskName, "Task name should be 'Sleeping'");
-		        assertEquals(2, thirdTask.priority, "Priority should be 2");
+		        assertEquals("Sleeping", thirdTask.taskName);
+		        assertEquals(2, thirdTask.priority);
 		    }
 
 	

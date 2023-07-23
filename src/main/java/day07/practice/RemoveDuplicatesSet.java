@@ -17,8 +17,9 @@ public class RemoveDuplicatesSet {
 		
 		System.out.println("Integer without using Set : " + numbers);
 		System.out.println();
-		Set<Integer> DistinctNumbers = new HashSet<>(numbers);
+		Set<Integer> DistinctNumbers = new TreeSet<>(numbers);
 		System.out.println("Unique Values: " + DistinctNumbers);
+		
 		
 
 
