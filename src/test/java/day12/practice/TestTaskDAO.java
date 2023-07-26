@@ -23,11 +23,31 @@ public class TestTaskDAO {
 	    void setUp() {
 	        taskDAO = new TaskDAO();
 	    } 
+		@BeforeAll
+		public static void setupDatabase() throws SQLException {
+			try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/project", "root", "123456");
+					Statement stmt = connection.createStatement()) {
+				// Create the "tasks" table if it doesn't exist
+				String createTableQuery = "CREATE TABLE IF NOT EXISTS task (" + "id INT PRIMARY KEY, "
+						+ "task_name VARCHAR(255), " + "task_status VARCHAR(50))";
+				stmt.executeUpdate(createTableQuery);
+			}
+		}
+		
+//		@AfterAll
+//	    public static void tearDownDatabase() throws SQLException {
+//	        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/project", "root", "123456");
+//	             Statement stmt = connection.createStatement()) {
+//	            // Drop the "tasks" table after all tests are executed
+//	            String dropTableQuery = "DROP TABLE IF EXISTS task";
+//	            stmt.executeUpdate(dropTableQuery);
+//	        }
+//	    }
 	    @Test
 	    void testCreateTask() {
 	        Task task = new Task();
-	        task.id = 10;
-	        task.taskName = "Task 10";
+	        task.id = 2;
+	        task.taskName = "Run";
 	        task.status = "Pending";
 
 	        try {
@@ -41,9 +61,9 @@ public class TestTaskDAO {
 	    @Test
 	    void testUpdateTask() {
 	        Task task = new Task();
-	        task.id = 4;
-	        task.taskName = "Sample Task 3";
-	        task.status = "Pending";
+	        task.id = 2;
+	        task.taskName = "Run";
+	        task.status = "Completed";
 
 	        try {
 	            taskDAO.updateTask(task);
@@ -54,7 +74,7 @@ public class TestTaskDAO {
 	    }
 	    @Test
 	    void testDeleteTask() {
-	        int taskId = 8;
+	        int taskId = 9;
 
 	        try {
 	            taskDAO.deleteTask(taskId);
@@ -78,4 +98,16 @@ public class TestTaskDAO {
 	            fail("Failed to get all tasks: " + e.getMessage());
 	        }
 	    }
+	    @Test
+	    void testGetTaskById() {
+	    	int taskId = 2; 
+	    	try {
+	    		taskDAO.getTaskById(taskId);
+			} catch (DAOException e) {
+				e.printStackTrace();
+	            fail("Failed to get task by Id: " + e.getMessage());
+	        
+			}
+	    }
+	  
 }

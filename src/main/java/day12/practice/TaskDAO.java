@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -82,4 +83,26 @@ public class TaskDAO {
         }
         return tasks;
     }
+    public Task getTaskById(int taskId) throws DAOException {
+    	List<Task> tasks = new ArrayList<>();
+		try (Connection connection = DriverManager.getConnection(url, username, password);
+				Statement stmt = connection.createStatement()) {
+			String query = "SELECT * FROM task WHERE id=" + taskId;
+			try (ResultSet rs = stmt.executeQuery(query)) {
+				while (rs.next()) {
+					Task task = new Task();
+					task.id = rs.getInt("id");
+					task.taskName = rs.getString("task_name");
+					task.status = rs.getString("task_status");
+					tasks.add(task);
+//					System.out.println(task);
+//					return task;
+				}
+			}
+		} catch (SQLException e) {
+			throw new DAOException("Error while retrieving task by ID", e);
+		}
+		System.out.println(tasks);
+		return null;
+	}
 }

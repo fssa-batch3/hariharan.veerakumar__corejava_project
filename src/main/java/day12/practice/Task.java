@@ -7,8 +7,8 @@ public class Task implements Comparable<Task>{
 	int id;
 	String taskName;
 	private LocalDate deadline;
-  private int priority;
-   String status; // Status can be "PENDING" / "COMPLETED"
+    private int priority;
+    String status; // Status can be "PENDING" / "COMPLETED"
 
 
     
@@ -95,9 +95,13 @@ public class Task implements Comparable<Task>{
 		return Objects.equals(deadline, other.deadline) && Objects.equals(taskName, other.taskName);
 	}
 	
+//	public String toString() {
+//		return "Task [taskName=" + taskName + ", deadline=" + deadline + ", priority=" + priority + "]";
+//	}
 	public String toString() {
-		return "Task [taskName=" + taskName + ", deadline=" + deadline + ", priority=" + priority + "]";
+		return "Task [taskId = " + id +", taskName = " + taskName + ", taskStatus = " + status + "]";
 	}
+	
 	
 
 	public int compareTo(Task other) {
