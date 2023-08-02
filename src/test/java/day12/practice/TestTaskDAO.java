@@ -34,20 +34,20 @@ public class TestTaskDAO {
 			}
 		}
 		
-//		@AfterAll
-//	    public static void tearDownDatabase() throws SQLException {
-//	        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/project", "root", "123456");
-//	             Statement stmt = connection.createStatement()) {
-//	            // Drop the "tasks" table after all tests are executed
-//	            String dropTableQuery = "DROP TABLE IF EXISTS task";
-//	            stmt.executeUpdate(dropTableQuery);
-//	        }
-//	    }
+		@AfterAll
+	    public static void tearDownDatabase() throws SQLException {
+	        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/project", "root", "123456");
+	             Statement stmt = connection.createStatement()) {
+	            // Drop the "tasks" table after all tests are executed
+	            String dropTableQuery = "DROP TABLE IF EXISTS task";
+	            stmt.executeUpdate(dropTableQuery);
+	        }
+	    }
 	    @Test
 	    void testCreateTask() {
 	        Task task = new Task();
-	        task.id = 2;
-	        task.taskName = "Run";
+	        task.id = 3;
+	        task.taskName = "Study";
 	        task.status = "Pending";
 
 	        try {
@@ -63,7 +63,7 @@ public class TestTaskDAO {
 	        Task task = new Task();
 	        task.id = 2;
 	        task.taskName = "Run";
-	        task.status = "Completed";
+	        task.status = "Pending";
 
 	        try {
 	            taskDAO.updateTask(task);
@@ -74,7 +74,7 @@ public class TestTaskDAO {
 	    }
 	    @Test
 	    void testDeleteTask() {
-	        int taskId = 9;
+	        int taskId = 2;
 
 	        try {
 	            taskDAO.deleteTask(taskId);
@@ -100,7 +100,7 @@ public class TestTaskDAO {
 	    }
 	    @Test
 	    void testGetTaskById() {
-	    	int taskId = 2; 
+	    	int taskId = 1; 
 	    	try {
 	    		taskDAO.getTaskById(taskId);
 			} catch (DAOException e) {
